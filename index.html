@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.tiny.cloud/1/52ker9lri9nts4gmuymfuulmq1sw7q8o4o1n79no99rem9o5/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            content_css: 'mycontent.css',
+            min_height: 900,
+            statusbar: false,
+            toolbar: 'undo redo | styleselect bold italic alignleft aligncenter alignright | bullist numlist checklist hr | outdent indent forecolor backcolor link | code codesample | addcomment media print save searchreplace',
+            plugins: 'visualblocks toc textpattern table tinymcespellchecker save print linkchecker advlist advcode lists checklist hr autolink codesample paste tinycomments link media searchreplace',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author',
+            spellchecker_language: 'en',
+            save_onsavecallback: function download() {
+                var elHtml = tinymce.get('mytextarea').getBody().innerHTML
+                var link = document.createElement('a');
+                mimeType = 'text/html' || 'text/plain';
+                link.setAttribute('download', 'title.html');
+                link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+                link.click();
+            },
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            /* height: 500px; */
+        }
+        
+        .tox-tinymce {
+            border: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <textarea id="mytextarea">
+        <ul class="tox-checklist">
+            <li class="">Wash the dishes
+            <p class="description">Please remember to wash the bottle</p>
+            </li>
+            <li class="">Clean your room
+            <ul class="tox-checklist">
+            <li class="tox-checklist--checked">fold clothing</li>
+            <li class="">sweep</li>
+            <li class="tox-checklist--checked">mop
+            <p class="description">Dont forget under the bed!</p>
+            </li>
+            <li class="">dust</li>
+            </ul>
+            </li>
+            <li class="tox-checklist--checked">Take out the garbage</li>
+            </ul>
+            <hr />
+    </textarea>
+    </form>
+    <button id="upload" onclick="setContent()">Upload</button>
+    <button id="save" onclick="download('download.html', 'mytextarea','text/html')">Save Changes</button>
+    <button onclick="runScript()">hi</button>
+
+    <script src="myscripts.js"></script>
+</body>
+
+</html>

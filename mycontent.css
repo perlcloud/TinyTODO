@@ -1,0 +1,47 @@
+html {
+    background-color: #f8f9fa;
+}
+
+body {
+    width: 740px;
+    /* min-height: 980px; */
+    padding: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    /* border: 1px solid #e4e4e4; */
+    -webkit-box-shadow: 0 0 3px rgba(36, 36, 36, 0.2), 0 0 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+hr {
+    border: 1px solid #dfdfdf;
+    /* color: #f8f9fa;
+    border-style: none; */
+}
+
+.tox-checklist {
+    /* background-color: rgb(243, 243, 243) */
+}
+
+.tox-checklist>li {
+    /* font-weight: bold; */
+}
+
+.tox-checklist--checked {
+    color: #b4b4b4;
+}
+
+.tox-checklist--checked {
+    color: #b4b4b4;
+}
+
+.description {
+    color: #797979;
+    font-size: 80%;
+    margin-block-start: .3em;
+    margin-block-end: 0;
+}
+
+.tox-checklist--checked>p {
+    color: #b4b4b4;
+}
